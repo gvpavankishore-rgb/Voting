@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fingerprint Verification</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+            width: 320px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .fingerprint {
+            font-size: 60px;
+            margin: 20px 0;
+        }
+
+        button {
+            background: #4facfe;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        button:hover {
+            background: #007bff;
+        }
+
+        p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* 🔥 simple loading effect */
+        .loading {
+            display: none;
+            margin-top: 10px;
+            color: green;
+            font-size: 14px;
+        }
+    </style>
+
+    <script>
+        function showLoading() {
+            document.getElementById("loading").style.display = "block";
+        }
+    </script>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Fingerprint Verification</h2>
+
+    <div class="fingerprint">🫆</div>
+
+    <p>Place your finger on the scanner</p>
+
+    <form action="/verify_fingerprint" method="post" onsubmit="showLoading()">
+        <button type="submit">Scan Fingerprint</button>
+    </form>
+
+    <div id="loading" class="loading">Scanning...</div>
+</div>
+
+</body>
+</html>
